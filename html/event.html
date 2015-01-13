@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+	<head>
+		<title>Confluence'15</title>
+		<link href="../css/main.css" rel="stylesheet" type="text/css">
+		<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css">
+		<link href="../font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+		<script src="../js/jquery.js" type="text/javascript"></script>
+		<script src="//tinymce.cachefly.net/4.1/tinymce.min.js"></script>
+		<script>tinymce.init({selector:'textarea'});</script>
+	</head>
+	<body>
+		<div class="container">
+			<button class="btn btn-primary fixed col-md-offset-10 col-md-1" onClick="logout()">Logout</button>
+			<div class="row">
+				<div class="col-md-offset-5 col-md-3 header">Events List</div>
+				
+			</div>
+			<div class="row" id="eventList">
+				
+			</div>
+		</div>
+		
+
+	<div class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">Events Details</h4>
+					
+				</div>
+				<div class="modal-body">
+					<form class="form-horizontal" style= "padding-top:50px" role="form" method="POST" enctype="multipart/form-data" id="eventRegister" name="eventRegister" action="../php/registerEvent.php">
+						<div class="form-group">
+							<label for="eventName" class="col-sm-2 control-label">Event Name</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" placeholder="Enter Event Name" id="eventName" name="eventName">
+							</div>
+						</div>
+				
+						<div class="form-group">
+							<label for="eventdescription" class="col-sm-2 control-label" style="resize:none">Event Description</label>
+							<div class="col-sm-9">
+								<textarea class="form-control noResize" rows="3" placeholder="Enter Event Description" id="eventdescription" name="eventdescription"></textarea>
+							</div>
+						</div>
+				
+						<div class="form-group">
+							<label for="eventRules" class="col-sm-2 control-label" style="resize:none">Event Rules</label>
+							<div class="col-sm-9">
+								<textarea class="form-control noResize" rows="3" placeholder="Enter Event Rules" id="eventRules" name="eventRules"></textarea>
+							</div>
+						</div>	
+				
+						<div class="form-group">
+							<label for="coordinator1" class="col-sm-2 control-label" style="resize:none">Coordinator #1</label>
+							<div class="col-sm-3">
+								<input type="text" class="form-control" placeholder="Enter Coordinator Name" id="coordinator1" name="coordinator1">
+							</div>
+							<label for="phone1" class="col-sm-2 col-md-offset-1 control-label" style="resize:none">Phone No.</label>
+							<div class="col-sm-3">
+								<input type="text" class="form-control" placeholder="Enter Phone No." id="phone1" name="phone1">
+							</div>
+						</div>
+					
+						<div class="form-group">
+							<label for="coordinator2" class="col-sm-2 control-label" style="resize:none">Coordinator #2</label>
+							<div class="col-sm-3">
+								<input type="text" class="form-control"  placeholder="Enter Coordinator Name" id="coordinator2" name="coordinator2">
+							</div>
+							<label for="phone1" class="col-sm-2 control-label col-md-offset-1" style="resize:none">Phone No.</label>
+							<div class="col-sm-3">
+								<input type="text" class="form-control" placeholder="Enter Phone No." id="phone2" name="phone2">
+							</div>
+						</div>
+			
+			   
+						<div class="form-group">
+							<label for="time" class="col-sm-2 control-label">Time</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="time" placeholder="Enter Scheduled Time" name="time">
+							</div>
+						</div>
+				
+						<div class="form-group">
+							<label for="venue" class="col-sm-2 control-label">Venue</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="venue" placeholder="Enter Venue" name="venue">
+							</div>
+						</div>
+				
+						<div class="form-group">
+							<label for="category" class="col-sm-2 control-label">Category</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="category" placeholder="Enter Category" name="category">
+							</div>
+						</div>
+				
+						
+						<input type="hidden" id="eventid" name="eventid"/>  
+					
+				</div>
+			
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" onClick="deleteEvent()"><i class="fa fa-trash"></i> Delete</button>
+					<button type="submit" id="submitButton" class="btn btn-primary" >Register</button>
+					</form>	
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	</body>
+	
+	<script src="../js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="../js/main.js" type="text/javascript"></script>
+</html>

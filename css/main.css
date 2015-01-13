@@ -1,0 +1,21 @@
+
+.header {
+	font-size:50px;
+}
+.noResize {
+	resize:none;
+}
+
+.margin10 {
+	margin: 10px !important;
+
+}
+.fixed {
+	position: fixed !important;
+}
+.lfloat {
+	float:right !important;
+}
+.rfloat {
+	float:left !important;
+}
